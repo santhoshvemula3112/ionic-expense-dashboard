@@ -1,13 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>dashboard</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dashboard</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item *ngFor="let expense of expenses">
+      <ion-label>
+        {{expense.name}} - ${{expense.amount}} ({{expense.date}})
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Use click with NavController -->
+  <ion-button expand="block" color="primary" (click)="goToAddExpense()">
+    Add New Expense
+  </ion-button>
+
 </ion-content>

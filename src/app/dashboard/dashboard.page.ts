@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { IonicModule, NavController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import { ExpenseService } from '../services/expense.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
-export class DashboardPage implements OnInit {
+export class DashboardPage {
 
-  constructor() { }
+  expenses: { name: string; amount: number; date: string }[] = [];
 
-  ngOnInit() {
+  constructor(
+    private navCtrl: NavController,  // NavController for navigation
+    private expenseService: ExpenseService
+  ) { }
+
+  ionViewWillEnter() {
+    // Load the latest expenses whenever this page is shown
+    this.expenses = this.expenseService.getExpenses();
   }
 
+  // Navigate to Add Expense page
+  goToAddExpense() {
+    this.navCtrl.navigateForward('/add-expense');
+  }
 }
