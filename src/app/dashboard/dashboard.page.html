@@ -1,40 +1,50 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Dashboard</ion-title>
+    <ion-title>Expense Tracker</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="dashboard-content">
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Total Expenses: ${{ getTotal() }}</ion-card-title>
-    </ion-card-header>
+  <!-- Total Card -->
+  <ion-card class="summary-card">
+    <ion-card-content>
+      <p>Total Expenses</p>
+      <h1>${{ getTotal() }}</h1>
+    </ion-card-content>
   </ion-card>
 
+  <!-- Expense List -->
   <ion-list>
+
     <ion-item *ngFor="let expense of expenses; let i = index">
+
       <ion-label>
         <h2>{{ expense.name }}</h2>
         <p>{{ expense.date }}</p>
       </ion-label>
 
-      <ion-text color="danger" class="amount-text">
+      <ion-text color="danger">
         <strong>${{ expense.amount }}</strong>
       </ion-text>
 
-      <ion-button fill="clear" color="primary" (click)="goToEditExpense(i)">
+      <ion-button fill="clear" size="small" color="primary" (click)="goToEditExpense(i)">
         Edit
       </ion-button>
 
-      <ion-button fill="clear" color="danger" (click)="deleteExpense(i)">
+      <ion-button fill="clear" size="small" color="danger" (click)="deleteExpense(i)">
         Delete
       </ion-button>
+
     </ion-item>
+
   </ion-list>
 
-  <ion-button expand="block" color="primary" (click)="goToAddExpense()">
-    Add New Expense
-  </ion-button>
+  <!-- Floating Add Button -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="goToAddExpense()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

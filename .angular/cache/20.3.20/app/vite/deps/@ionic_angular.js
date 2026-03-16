@@ -1,16 +1,13 @@
 import {
   menuController
-} from "./chunk-LNWTHTHN.js";
-import {
-  mdTransitionAnimation
-} from "./chunk-BO7KKRXO.js";
+} from "./chunk-4KVOBXMZ.js";
 import {
   getTimeGivenProgression
 } from "./chunk-34QX6F67.js";
 import {
   IonicSafeString,
   setupConfig
-} from "./chunk-QW4LH5PC.js";
+} from "./chunk-QCJ4SJO6.js";
 import {
   actionSheetController,
   alertController,
@@ -19,35 +16,25 @@ import {
   pickerController,
   popoverController,
   toastController
-} from "./chunk-3UFAN5QE.js";
-import "./chunk-O4XNPBY5.js";
+} from "./chunk-NI3PC6CF.js";
+import "./chunk-7IHD6HCR.js";
 import {
   openURL
 } from "./chunk-YHTFT7Q3.js";
-import {
-  getPlatforms,
-  initialize,
-  isPlatform
-} from "./chunk-SU5FLDDX.js";
-import {
-  createGesture
-} from "./chunk-Z3OEOVFM.js";
-import "./chunk-QA2SYHF5.js";
-import "./chunk-NZMNXQ6I.js";
+import "./chunk-R6TQXGDI.js";
 import {
   iosTransitionAnimation
-} from "./chunk-3DCZ5WC3.js";
+} from "./chunk-YHGZ43BB.js";
+import {
+  mdTransitionAnimation
+} from "./chunk-QX3KK4CB.js";
 import {
   getIonPageElement
-} from "./chunk-MJ3MFWKG.js";
+} from "./chunk-L4LUKZGN.js";
 import {
   createAnimation
-} from "./chunk-6Z7P7GZ5.js";
-import "./chunk-QSJNAXUK.js";
+} from "./chunk-AG3D66NI.js";
 import "./chunk-LCMILTBF.js";
-import {
-  bootstrapLazy
-} from "./chunk-NEQZ727S.js";
 import {
   AngularDelegate,
   Config,
@@ -72,15 +59,28 @@ import {
   provideComponentInputBinding,
   raf,
   setIonicClasses
-} from "./chunk-G3PG4MG4.js";
-import "./chunk-GB2TETKD.js";
-import "./chunk-6LMHDRJW.js";
-import "./chunk-FOXB2BIM.js";
-import "./chunk-ZR6Q7TUJ.js";
-import "./chunk-TCEW23F2.js";
-import "./chunk-WH2RCB7C.js";
+} from "./chunk-W2SSZOND.js";
+import "./chunk-ZS7ACF4K.js";
+import "./chunk-LHCHRSMZ.js";
+import "./chunk-2O6WAXUO.js";
 import "./chunk-VGZ3Y7MJ.js";
+import "./chunk-TCEW23F2.js";
+import "./chunk-ZR6Q7TUJ.js";
+import "./chunk-WH2RCB7C.js";
 import "./chunk-3B5L6JJ3.js";
+import {
+  getPlatforms,
+  initialize,
+  isPlatform
+} from "./chunk-JEKKBAQN.js";
+import "./chunk-FFJDKJVV.js";
+import {
+  bootstrapLazy
+} from "./chunk-2NPEKE3K.js";
+import {
+  createGesture
+} from "./chunk-Z3OEOVFM.js";
+import "./chunk-QA2SYHF5.js";
 import {
   MaxValidator,
   MinValidator,

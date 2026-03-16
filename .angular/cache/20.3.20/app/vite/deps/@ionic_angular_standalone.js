@@ -87,13 +87,13 @@ import {
   t2 as t3,
   x as x2,
   y as y2
-} from "./chunk-G3PG4MG4.js";
+} from "./chunk-W2SSZOND.js";
 import {
   l as l2
-} from "./chunk-GB2TETKD.js";
+} from "./chunk-ZS7ACF4K.js";
 import {
   i as i2
-} from "./chunk-6LMHDRJW.js";
+} from "./chunk-LHCHRSMZ.js";
 import {
   B,
   D,
@@ -104,18 +104,7 @@ import {
   r,
   s as s2,
   v as v2
-} from "./chunk-FOXB2BIM.js";
-import {
-  o as o3
-} from "./chunk-ZR6Q7TUJ.js";
-import {
-  h,
-  s as s3
-} from "./chunk-TCEW23F2.js";
-import {
-  d,
-  o
-} from "./chunk-WH2RCB7C.js";
+} from "./chunk-2O6WAXUO.js";
 import {
   T,
   _,
@@ -136,6 +125,17 @@ import {
   x,
   y
 } from "./chunk-VGZ3Y7MJ.js";
+import {
+  h,
+  s as s3
+} from "./chunk-TCEW23F2.js";
+import {
+  o as o3
+} from "./chunk-ZR6Q7TUJ.js";
+import {
+  d,
+  o
+} from "./chunk-WH2RCB7C.js";
 import {
   Ct,
   Dn,
@@ -516,7 +516,7 @@ var b3 = Dn(class extends I {
       const t14 = () => {
         this.gestureOrAnimationInProgress = true, this.swipeHandler && this.swipeHandler.onStart();
       };
-      this.gesture = (yield import("./p-Cz5nLPGT-4SO2HBO3.js")).createSwipeBackGesture(this.el, (() => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart()), (() => t14()), ((t15) => {
+      this.gesture = (yield import("./p-Cz5nLPGT-SUDRTXR5.js")).createSwipeBackGesture(this.el, (() => !this.gestureOrAnimationInProgress && !!this.swipeHandler && this.swipeHandler.canStart()), (() => t14()), ((t15) => {
         var i13;
         return null === (i13 = this.ani) || void 0 === i13 ? void 0 : i13.progressStep(t15);
       }), ((t15, i13, s19) => {
@@ -2297,9 +2297,9 @@ var d6 = Dn(class extends I {
   componentDidLoad() {
     this.rIC((() => __async(this, null, function* () {
       const t14 = s4(window, "hybrid");
-      if (n.getBoolean("_testing") || import("./p-BgwEQWW6-JJDT656C.js").then(((t15) => t15.startTapClick(n))), n.getBoolean("statusTap", t14) && import("./p-CneGxKsZ-UCIFPERE.js").then(((t15) => t15.startStatusTap())), n.getBoolean("inputShims", m6())) {
+      if (n.getBoolean("_testing") || import("./p-BgwEQWW6-PEFCX64A.js").then(((t15) => t15.startTapClick(n))), n.getBoolean("statusTap", t14) && import("./p-CneGxKsZ-UCIFPERE.js").then(((t15) => t15.startStatusTap())), n.getBoolean("inputShims", m6())) {
         const t15 = s4(window, "ios") ? "ios" : "android";
-        import("./p-Cwv-vmkN-3O3D6A2U.js").then(((e15) => e15.startInputShims(n, t15)));
+        import("./p-Cwv-vmkN-D3FKHNTA.js").then(((e15) => e15.startInputShims(n, t15)));
       }
       const e14 = yield import("./p-vEbVo2hO-FIFH3Y4Y.js"), i13 = t14 || o3();
       n.getBoolean("hardwareBackButton", i13) ? e14.startHardwareBackButton() : (o3() && u("[ion-app] - experimentalCloseWatcher was set to `true`, but hardwareBackButton was set to `false`. Both config options must be `true` for the Close Watcher API to be used."), e14.blockHardwareBackButton()), "undefined" != typeof window && import("./p-D6Ynv7Xh-ZWOYARH5.js").then(((t15) => t15.startKeyboardAssist(window))), import("./p-BmVRXR1y-VDINOXZS.js").then(((t15) => this.focusVisible = t15.startFocusVisible()));
@@ -7135,7 +7135,7 @@ var k7 = Dn(class extends I {
   }
   componentDidLoad() {
     return __async(this, null, function* () {
-      this.didLoad = true, this.rootChanged(), this.gesture = (yield import("./p-Cz5nLPGT-4SO2HBO3.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this)), this.swipeGestureChanged();
+      this.didLoad = true, this.rootChanged(), this.gesture = (yield import("./p-Cz5nLPGT-SUDRTXR5.js")).createSwipeBackGesture(this.el, this.canStart.bind(this), this.onStart.bind(this), this.onMove.bind(this), this.onEnd.bind(this)), this.swipeGestureChanged();
     });
   }
   connectedCallback() {

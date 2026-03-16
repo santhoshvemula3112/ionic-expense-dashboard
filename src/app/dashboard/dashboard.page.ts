@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicModule, NavController } from '@ionic/angular';
+import { IonicModule, NavController, AlertController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { addIcons } from 'ionicons';
+import { createOutline, trashOutline, add } from 'ionicons/icons';
+
 import { ExpenseService, Expense } from '../services/expense.service';
 
 @Component({
@@ -12,12 +15,22 @@ import { ExpenseService, Expense } from '../services/expense.service';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class DashboardPage implements OnInit {
+
   expenses: Expense[] = [];
 
   constructor(
     private navCtrl: NavController,
-    private expenseService: ExpenseService
-  ) { }
+    private expenseService: ExpenseService,
+    private alertCtrl: AlertController
+  ) {
+
+    // REGISTER ICONS
+    addIcons({
+      createOutline,
+      trashOutline,
+      add
+    });
+  }
 
   ngOnInit() {
     this.loadExpenses();
@@ -43,8 +56,27 @@ export class DashboardPage implements OnInit {
     this.navCtrl.navigateForward(`/add-expense/${index}`);
   }
 
-  deleteExpense(index: number) {
-    this.expenseService.deleteExpense(index);
-    this.loadExpenses();
+  async deleteExpense(index: number) {
+
+    const alert = await this.alertCtrl.create({
+      header: 'Delete Expense',
+      message: 'Are you sure you want to delete this expense?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        },
+        {
+          text: 'Delete',
+          role: 'destructive',
+          handler: () => {
+            this.expenseService.deleteExpense(index);
+            this.loadExpenses();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }
