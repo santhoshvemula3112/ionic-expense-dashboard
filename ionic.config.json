@@ -1,0 +1,7 @@
+{
+  "name": "expense-dashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
