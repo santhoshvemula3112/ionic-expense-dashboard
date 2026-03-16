@@ -1,18 +1,14 @@
 import { Component } from '@angular/core';
+import { IonicModule, NavController, AlertController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule, NavController, AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule
-  ]
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class LoginPage {
 
@@ -22,9 +18,8 @@ export class LoginPage {
   constructor(private navCtrl: NavController, private alertCtrl: AlertController) { }
 
   async login() {
-    // Hardcoded credentials
     if (this.username === 'san' && this.password === '9704') {
-      this.navCtrl.navigateForward('/dashboard'); // navigate to Dashboard
+      this.navCtrl.navigateForward('/dashboard');
     } else {
       const alert = await this.alertCtrl.create({
         header: 'Login Failed',
@@ -34,4 +29,5 @@ export class LoginPage {
       await alert.present();
     }
   }
+
 }

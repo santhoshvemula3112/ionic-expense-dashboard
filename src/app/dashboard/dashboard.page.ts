@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule, NavController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ExpenseService } from '../services/expense.service';
+import { ExpenseService, Expense } from '../services/expense.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,22 +11,40 @@ import { ExpenseService } from '../services/expense.service';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-export class DashboardPage {
-
-  expenses: { name: string; amount: number; date: string }[] = [];
+export class DashboardPage implements OnInit {
+  expenses: Expense[] = [];
 
   constructor(
-    private navCtrl: NavController,  // NavController for navigation
+    private navCtrl: NavController,
     private expenseService: ExpenseService
   ) { }
 
+  ngOnInit() {
+    this.loadExpenses();
+  }
+
   ionViewWillEnter() {
-    // Load the latest expenses whenever this page is shown
+    this.loadExpenses();
+  }
+
+  loadExpenses() {
     this.expenses = this.expenseService.getExpenses();
   }
 
-  // Navigate to Add Expense page
+  getTotal(): number {
+    return this.expenses.reduce((sum, expense) => sum + expense.amount, 0);
+  }
+
   goToAddExpense() {
     this.navCtrl.navigateForward('/add-expense');
+  }
+
+  goToEditExpense(index: number) {
+    this.navCtrl.navigateForward(`/add-expense/${index}`);
+  }
+
+  deleteExpense(index: number) {
+    this.expenseService.deleteExpense(index);
+    this.loadExpenses();
   }
 }
